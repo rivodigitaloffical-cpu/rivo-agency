@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Rivo Digital</title>
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; height: 100vh; background-color: var(--bg-dark); }
+        .login-box { background-color: var(--bg-light); padding: 3rem; border-radius: 8px; border: 1px solid var(--gold); width: 100%; max-width: 400px; text-align: center; }
+        .login-box h2 { margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2 class="gold-text">Admin Secure Login</h2>
+        <form action="/api/login" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required placeholder="Enter admin username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+        </form>
+    </div>
+</body>
+</html>

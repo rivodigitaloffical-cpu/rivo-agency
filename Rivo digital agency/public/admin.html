@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Rivo Digital</title>
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-header { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-bottom: 1px solid var(--gold); }
+        .admin-content { max-width: 800px; margin: 3rem auto; padding: 2rem; background: var(--bg-light); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .file-upload { background: var(--bg-dark); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; border: 1px dashed var(--gold); }
+        .success-msg { display: none; background: #2e7d32; color: white; padding: 1rem; text-align: center; border-radius: 4px; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <h2 class="gold-text">Rivo Digital Admin</h2>
+        <a href="/api/logout" class="btn btn-outline">Logout</a>
+    </header>
+
+    <div class="container">
+        <div class="admin-content">
+            <div id="success-banner" class="success-msg">Changes saved successfully!</div>
+            
+            <h3 style="margin-bottom: 1.5rem;">Update Homepage Content</h3>
+            <form action="/api/settings/update" method="POST" enctype="multipart/form-data">
+                
+                <h4 class="gold-text" style="margin-top: 2rem;">Hero Slider Images</h4>
+                <div class="file-upload">
+                    <label>Slide 1 Image</label><br>
+                    <input type="file" name="slide1" accept="image/*">
+                </div>
+                <div class="file-upload">
+                    <label>Slide 2 Image</label><br>
+                    <input type="file" name="slide2" accept="image/*">
+                </div>
+                <div class="file-upload">
+                    <label>Slide 3 Image</label><br>
+                    <input type="file" name="slide3" accept="image/*">
+                </div>
+
+                <h4 class="gold-text" style="margin-top: 2rem;">Video Section</h4>
+                <div class="form-group">
+                    <label>Video YouTube Link</label>
+                    <input type="url" name="videoLink" class="form-control" placeholder="https://www.youtube.com/...">
+                </div>
+                <div class="file-upload">
+                    <label>Video Thumbnail Image</label><br>
+                    <input type="file" name="videoThumb" accept="image/*">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 2rem; width: 100%;">Save All Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Check for success parameter
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('success-banner').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = '/admin';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

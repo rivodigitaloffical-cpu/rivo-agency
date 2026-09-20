@@ -1,0 +1,9 @@
+{
+  "slides": [
+    "images/hero_slide_1.jpg",
+    "images/hero_slide_2.jpg",
+    "images/hero_slide_3.jpg"
+  ],
+  "videoThumb": "images/video_thumb.jpg",
+  "videoLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
